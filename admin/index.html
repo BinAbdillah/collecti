@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">Pueny<span>Admin</span></div>
+      <nav>
+        <a href="dashboard.html" class="active">📊 Dashboard</a>
+        <a href="products.html">👗 Produk</a>
+        <a href="orders.html">📦 Pesanan</a>
+        <a href="requests.html">📝 By Request</a>
+        <a href="#">👥 Pelanggan</a>
+        <a href="#">📈 Laporan</a>
+        <a href="#">⚙️ Pengaturan</a>
+      </nav>
+      <div class="admin-user">
+        <span>👤</span> Admin Pueny
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <h2>Dashboard</h2>
+        <span>Kamis, 6 Agustus 2026</span>
+      </div>
+
+      <!-- STATS -->
+      <div class="admin-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div><div class="stat-num">156</div><div class="stat-label">Pesanan Bulan Ini</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div><div class="stat-num">Rp 24.5 Jt</div><div class="stat-label">Revenue</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div><div class="stat-num">89</div><div class="stat-label">Pelanggan Baru</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div><div class="stat-num">12</div><div class="stat-label">By Request Pending</div></div>
+        </div>
+      </div>
+
+      <!-- RECENT ORDERS -->
+      <div class="admin-table-section">
+        <h3>Pesanan Terbaru</h3>
+        <table class="admin-table">
+          <thead>
+            <tr><th>ID</th><th>Pelanggan</th><th>Produk</th><th>Total</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#0156</td><td>Aisyah R.</td><td>Gamis Aisyah x1</td><td>Rp 159.000</td><td><span class="status shipped">Dikirim</span></td></tr>
+            <tr><td>#0155</td><td>Fatimah Z.</td><td>Kebaya Zahra x2</td><td>Rp 378.000</td><td><span class="status processing">Diproses</span></td></tr>
+            <tr><td>#0154</td><td>Khadijah M.</td><td>Custom Gamis x1</td><td>Rp 210.000</td><td><span class="status pending">Pending</span></td></tr>
+            <tr><td>#0153</td><td>Zahra A.</td><td>Khimar Instan x3</td><td>Rp 165.000</td><td><span class="status done">Selesai</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style My Look - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    body{background:#111;}
+    .sml-container{max-width:650px;margin:0 auto;padding:40px 20px;}
+    .sml-box{background:#1a1a1a;border-radius:20px;padding:36px;border:1px solid #2a2a2a;}
+    .sml-progress{height:4px;background:#2a2a2a;border-radius:2px;margin-bottom:20px;overflow:hidden;}
+    .sml-bar{height:100%;background:linear-gradient(90deg,#C9A96E,#D4B87A);transition:width .4s;}
+    .sml-step{font-size:12px;color:#666;margin-bottom:8px;}
+    .sml-question{font-size:20px;font-weight:300;margin-bottom:20px;color:#F5F0E8;letter-spacing:1px;}
+    .sml-options{display:flex;flex-direction:column;gap:10px;}
+    .sml-option{
+      padding:14px 20px;border:1px solid #333;border-radius:12px;
+      text-align:left;font-size:14px;transition:all .3s;
+      background:#222;color:#ccc;
+    }
+    .sml-option:hover{border-color:#C9A96E;background:rgba(201,169,110,.06);color:#F5F0E8;}
+    .sml-result{text-align:center;}
+    .sml-rec-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+    .sml-rec-card{
+      background:#222;border:1px solid #333;border-radius:14px;padding:20px;
+      width:180px;text-align:center;
+    }
+    .sml-rec-card h4{font-size:13px;margin:8px 0 4px;color:#eee;}
+    .sml-rec-card p{margin-bottom:10px;color:#888;}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="style-my-look.html" class="active">Style My Look</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sml-container">
+    <div class="section-header">
+      <h2>Style My Look<span class="dot">.</span></h2>
+      <p>Jawab 4 pertanyaan, dapatkan rekomendasi outfit personal</p>
+      <div class="line"></div>
+    </div>
+    <div class="sml-box" id="sml-container"></div>
+  </div>
+
+  <script src="../js/modules/styleMyLook.js"></script>
+</body>
+</html>

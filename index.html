@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pueny Collections - Anggun, Modest & Stylish dalam Fitrah</title>
+  <meta name="description" content="Pakaian muslimah affordable untuk semua. Gamis, Kebaya, Kulot, Khimar. Terima by request.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+<!-- ===== INLINE OVERRIDE  ===== -->
+<style>
+    body{background:#111;}
+    ::selection{background:rgba(201,169,110,.3);}
+    ::-webkit-scrollbar{width:8px;}
+    ::-webkit-scrollbar-track{background:#111;}
+    ::-webkit-scrollbar-thumb{background:#333;border-radius:4px;}
+    ::-webkit-scrollbar-thumb:hover{background:#C9A96E;}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/catalog.html">Katalog</a>
+        <a href="pages/mix-match.html">Mix & Match</a>
+        <a href="pages/by-request.html">By Request</a>
+        <a href="pages/catalog.html?collection=iedl-fitri">Ied Fitri</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" title="Cari"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn" title="Wishlist"><svg class="icon"><use href="#i-heart"/></svg></button>
+        <button class="icon-btn cart-badge" id="cartToggle" title="Keranjang"><svg class="icon"><use href="#i-bag"/></svg><span class="badge-count" id="cartCount">0</span></button>
+        <button class="icon-btn" title="Akun"><svg class="icon"><use href="#i-user"/></svg></button>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+    </div>
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+      <input type="text" id="searchInput" placeholder="Cari gamis, kebaya, khimar...">
+      <button onclick="searchProducts()">Cari</button>
+    </div>
+  </header>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement">
+    &#127775; GRATIS ONGKIR &bull; OPEN PRE-ORDER KOLEKSI IED FITRI 2026 &bull; TERIMA BY REQUEST &#127775;
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">&#10024; Koleksi Baru Tersedia</span>
+        <h1>Anggun, Modest &<br><span class="accent">Stylish</span> dalam Fitrah</h1>
+        <p>Pakaian muslimah untuk semua usia. Affordable, bisa custom by request, dan selalu membuatmu tampil percaya diri.</p>
+        <div class="hero-btns">
+          <a href="pages/catalog.html" class="btn btn-primary">&#128717;&#65039; Belanja Sekarang</a>
+          <a href="pages/by-request.html" class="btn btn-outline">&#128207; By Request</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-placeholder">
+          <span class="hero-icon">&#129495;&#8205;&#9792;&#65039;</span>
+          <span>Pueny Collections 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KATEGORI -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Belanja Berdasarkan Kategori<span class="dot">.</span></h2>
+      <p>Temukan gaya yang sesuai dengan kepribadianmu</p>
+      <div class="line"></div>
+    </div>
+    <div class="categories" id="categoriesGrid">
+      <!-- Di-render oleh JS dari categories.json -->
+    </div>
+  </section>
+
+  <!-- PRODUK -->
+  <section class="section">
+    <div class="section-header">
+      <h2>New Arrivals<span class="dot">.</span></h2>
+      <p>Koleksi terbaru, harga terjangkau untuk semua</p>
+      <div class="line"></div>
+    </div>
+    <div class="filter-pills" id="filterPills">
+      <button class="pill active" data-filter="all">Semua</button>
+      <button class="pill" data-filter="gamis">Gamis</button>
+      <button class="pill" data-filter="kebaya">Kebaya</button>
+      <button class="pill" data-filter="kulot">Kulot</button>
+      <button class="pill" data-filter="khimar">Khimar</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <!-- Di-render oleh JS dari products.json -->
+    </div>
+  </section>
+
+  <!-- KOLEKSI IED FITRI -->
+  <section class="festive-banner">
+    <div class="festive-content">
+      <span class="festive-tag">&#127769; KOLEKSI EKSKLUSIF</span>
+      <h3>Koleksi Idul Fitri 2026</h3>
+      <p>Tampil memukau di Hari Kemenangan. Pre-order sekarang, kirim H-7 sebelum Lebaran.</p>
+      <a href="pages/catalog.html?collection=iedl-fitri" class="btn btn-primary">Lihat Koleksi &#127769;</a>
+    </div>
+    <div class="festive-visual">&#127769;&#10024;</div>
+  </section>
+
+  <!-- BY REQUEST -->
+  <section class="section">
+    <div class="custom-request">
+      <h3>&#128207; Bisa <span class="accent">By Request</span> Lho!</h3>
+      <p>Custom bahan, warna, ukuran, dan model sesuai keinginanmu. Harga tetap affordable.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><span>Pilih Model</span></div>
+        <div class="step"><div class="step-num">2</div><span>Pilih Bahan</span></div>
+        <div class="step"><div class="step-num">3</div><span>Input Ukuran</span></div>
+        <div class="step"><div class="step-num">4</div><span>Konfirmasi</span></div>
+        <div class="step"><div class="step-num">5</div><span>Dikirim 7-14 Hari</span></div>
+      </div>
+      <a href="pages/by-request.html" class="btn btn-primary">Mulai Custom &#128207;</a>
+    </div>
+  </section>
+
+  <!-- FITUR -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Fitur Belanja<span class="dot">.</span></h2>
+      <p>Pengalaman belanja yang personal dan menyenangkan</p>
+      <div class="line"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#127912;</div>
+        <h4>Mix & Match Builder</h4>
+        <p>Kombinasikan atasan, bawahan, dan khimar. Lihat hasilnya sebelum beli!</p>
+        <a href="pages/mix-match.html" class="btn btn-sm">Coba Sekarang</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128207;</div>
+        <h4>Size Finder</h4>
+        <p>Input tinggi & berat badan, kami rekomendasikan ukuran yang paling pas.</p>
+        <a href="pages/size-finder.html" class="btn btn-sm">Cari Ukuranmu</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128131;</div>
+        <h4>Style My Look</h4>
+        <p>Jawab beberapa pertanyaan, dapatkan rekomendasi outfit sesuai gaya & occasion.</p>
+        <a href="pages/style-my-look.html" class="btn btn-sm">Mulai Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Kata Mereka<span class="dot">.</span></h2>
+      <p>Review jujur dari pelanggan Pueny Collections</p>
+      <div class="line"></div>
+    </div>
+    <div class="testimonials" id="testimonialsGrid">
+      <!-- Di-render oleh JS dari testimonials.json -->
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h3>&#128140; Dapatkan Diskon 15%</h3>
+    <p>Subscribe untuk promo eksklusif, info koleksi baru & tips OOTD</p>
+    <div class="newsletter-form">
+      <input type="email" id="emailInput" placeholder="Email kamu...">
+      <button class="btn btn-primary" onclick="subscribe()">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Pueny Collections</h4>
+        <a href="#">Tentang Kami</a>
+        <a href="#">Karir</a>
+        <a href="#">Blog</a>
+      </div>
+      <div>
+        <h4>Belanja</h4>
+        <a href="pages/catalog.html?cat=gamis">Gamis</a>
+        <a href="pages/catalog.html?cat=kebaya">Kebaya Muslimah</a>
+        <a href="pages/catalog.html?cat=kulot">Kulot</a>
+        <a href="pages/catalog.html?cat=khimar">Khimar</a>
+      </div>
+      <div>
+        <h4>Bantuan</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Pengiriman</a>
+        <a href="#">Return & Refund</a>
+        <a href="pages/size-finder.html">Size Guide</a>
+      </div>
+      <div>
+        <h4>Hubungi Kami</h4>
+        <a href="#">&#128241; WhatsApp</a>
+        <a href="#">&#128247; Instagram</a>
+        <a href="#">&#127925; TikTok</a>
+        <a href="#">&#128722; Shopee</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pueny Collections. All rights reserved.</p>
+      <p class="tagline">"Anggun, Modest dan Stylish dalam Fitrah"</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/main.js"></script>
+  <script src="js/modules/cart.js"></script>
+  <script src="js/modules/productFilter.js"></script>
+  <script src="js/modules/iconLoader.js"></script>
+</body>
+</html>

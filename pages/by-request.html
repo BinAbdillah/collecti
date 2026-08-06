@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>By Request - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .br-container{max-width:800px;margin:0 auto;padding:40px 20px;}
+    .br-form{background:#1a1a1a;border-radius:20px;padding:40px;border:1px solid #2a2a2a;}
+    .br-form h3{font-size:20px;font-weight:300;margin-bottom:6px;letter-spacing:1px;}
+    .br-form .sub{font-size:13px;color:#888;margin-bottom:30px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .form-group{margin-bottom:16px;}
+    .form-group label{display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;padding:12px 16px;background:#222;border:1px solid #333;
+      border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;font-family:inherit;
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);}
+    .form-group textarea{height:100px;resize:vertical;}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:#555;}
+    .br-note{
+      background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.15);
+      border-radius:12px;padding:16px;margin:20px 0;font-size:12px;color:#aaa;line-height:1.6;
+    }
+    .br-note strong{color:var(--primary);}
+    .upload-area{
+      border:2px dashed #333;border-radius:12px;padding:30px;text-align:center;
+      cursor:pointer;transition:all .3s;color:#777;font-size:13px;
+    }
+    .upload-area:hover{border-color:var(--primary);color:var(--primary);}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="by-request.html" class="active">By Request</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn cart-badge">&#128722;<span class="badge-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="br-container">
+    <div class="section-header">
+      <h2>By <span style="color:var(--primary);">Request</span></h2>
+      <p>Custom pakaian sesuai keinginanmu</p>
+      <div class="line"></div>
+    </div>
+
+    <form class="br-form" id="requestForm">
+      <h3>📝 Form Custom Order</h3>
+      <p class="sub">Isi detail di bawah, tim kami akan konfirmasi dalam 1x24 jam via WhatsApp.</p>
+
+      <!-- Data Diri -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Nama kamu" required>
+        </div>
+        <div class="form-group">
+          <label>No. WhatsApp</label>
+          <input type="tel" placeholder="08xxxxxxxxxx" required>
+        </div>
+      </div>
+
+      <!-- Produk -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Kategori</label>
+          <select required>
+            <option value="">-- Pilih --</option>
+            <option>Gamis</option>
+            <option>Kebaya Muslimah</option>
+            <option>Kulot</option>
+            <option>Khimar</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ukuran</label>
+          <select required>
+            <option value="">-- Pilih --</option>
+            <option>S</option><option>M</option><option>L</option>
+            <option>XL</option><option>XXL</option><option>Custom (tulis di catatan)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Bahan</label>
+          <select>
+            <option value="">-- Pilih --</option>
+            <option>Ceruty</option>
+            <option>Wolfis</option>
+            <option>Satin</option>
+            <option>Linen</option>
+            <option>Katun Jepang</option>
+            <option>Belum tahu (konsultasi dulu)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Warna</label>
+          <input type="text" placeholder="Contoh: Sage green, Dusty rose...">
+        </div>
+      </div>
+
+      <!-- Upload Referensi -->
+      <div class="form-group">
+        <label>Referensi Model (opsional)</label>
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+          📎 Klik untuk upload gambar referensi<br>
+          <small>(JPG, PNG, max 5MB)</small>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;">
+      </div>
+
+      <!-- Catatan -->
+      <div class="form-group">
+        <label>Catatan Tambahan</label>
+        <textarea placeholder="Contoh: Minta lengan lebih panjang, tambah saku di kanan, dll..."></textarea>
+      </div>
+
+      <!-- Note -->
+      <div class="br-note">
+        <strong>ℹ️ Info:</strong> Pengerjaan 7-14 hari kerja. Harga mulai Rp 150.000 tergantung bahan & kompleksitas. DP 50% di awal, pelunasan sebelum kirim.
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;">Kirim Request 📩</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pueny Collections</p>
+      <p class="tagline">"Anggun, Modest dan Stylish dalam Fitrah"</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('requestForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Request terkirim! ✅\nTim Pueny akan menghubungi kamu via WhatsApp dalam 1x24 jam.\n\nTerima kasih! 🙏');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

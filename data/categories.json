@@ -1,0 +1,9 @@
+{
+    "categories": [
+      {"id":"gamis","name":"Gamis","icon":"👗","count":24},
+      {"id":"kebaya","name":"Kebaya Muslimah","icon":"👫","count":18},
+      {"id":"kulot","name":"Kulot","icon":"👖","count":15},
+      {"id":"khimar","name":"Khimar","icon":"🧕","count":20},
+      {"id":"coming","name":"Segera Hadir","icon":"✨","count":0}
+    ]
+  }

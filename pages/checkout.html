@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .co-container{max-width:700px;margin:0 auto;padding:40px 20px;}
+    .co-form{background:#1a1a1a;border-radius:20px;padding:36px;border:1px solid #2a2a2a;}
+    .co-section{margin-bottom:28px;}
+    .co-section h4{font-size:15px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:1px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    .form-group{margin-bottom:14px;}
+    .form-group label{display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;}
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;padding:12px 14px;background:#222;border:1px solid #333;
+      border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;
+    }
+    .form-group input:focus,.form-group select:focus{border-color:var(--primary);}
+    .form-group textarea{height:70px;resize:vertical;}
+    .payment-options{display:flex;flex-direction:column;gap:10px;}
+    .payment-opt{
+      display:flex;align-items:center;gap:12px;padding:14px;
+      border:1px solid #333;border-radius:10px;cursor:pointer;transition:all .3s;
+    }
+    .payment-opt:hover,.payment-opt.selected{border-color:var(--primary);background:rgba(201,169,110,.04);}
+    .payment-opt input[type="radio"]{accent-color:var(--primary);}
+    .payment-opt span{font-size:13px;color:#ccc;}
+    .co-total{
+      background:#222;border-radius:12px;padding:20px;margin-top:20px;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .co-total .label{font-size:14px;color:#aaa;}
+    .co-total .amount{font-size:24px;font-weight:800;color:var(--primary);}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="cart.html">Keranjang</a>
+        <a href="checkout.html" class="active">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="co-container">
+    <div class="section-header">
+      <h2>Checkout<span class="dot">.</span></h2>
+      <p>Langkah terakhir sebelum pesanan diproses</p>
+      <div class="line"></div>
+    </div>
+
+    <form class="co-form" id="checkoutForm">
+      <!-- Alamat -->
+      <div class="co-section">
+        <h4>📍 Alamat Pengiriman</h4>
+        <div class="form-row">
+          <div class="form-group"><label>Nama Penerima</label><input type="text" placeholder="Nama lengkap" required></div>
+          <div class="form-group"><label>No. HP</label><input type="tel" placeholder="08xxxxxxxxxx" required></div>
+        </div>
+        <div class="form-group"><label>Alamat Lengkap</label><textarea placeholder="Jalan, RT/RW, Kelurahan, Kecamatan..."></textarea></div>
+        <div class="form-row">
+          <div class="form-group"><label>Kota</label><input type="text" placeholder="Kota"></div>
+          <div class="form-group"><label>Kode Pos</label><input type="text" placeholder="12345"></div>
+        </div>
+      </div>
+
+      <!-- Pembayaran -->
+      <div class="co-section">
+        <h4>💳 Metode Pembayaran</h4>
+        <div class="payment-options">
+          <label class="payment-opt selected"><input type="radio" name="payment" checked><span>🏦 Transfer Bank (BCA / Mandiri / BNI)</span></label>
+          <label class="payment-opt"><input type="radio" name="payment"><span>📱 E-Wallet (GoPay / OVO / DANA / ShopeePay)</span></label>
+          <label class="payment-opt"><input type="radio" name="payment"><span>💵 COD (Cash on Delivery)</span></label>
+          <label class="payment-opt"><input type="radio" name="payment"><span>🏪 Minimarket (Indomaret / Alfamart)</span></label>
+        </div>
+      </div>
+
+      <!-- Catatan -->
+      <div class="co-section">
+        <h4>📝 Catatan (Opsional)</h4>
+        <div class="form-group">
+          <textarea placeholder="Contoh: Tolong packing rapi untuk gift, kirim sebelum tanggal 10..."></textarea>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="co-total">
+        <span class="label">Total Pembayaran</span>
+        <span class="amount">Rp 269.000</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;">
+        ✓ Buat Pesanan
+      </button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pueny Collections</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Pesanan berhasil dibuat! ✅\n\nOrder ID: PNY-2026-0157\nTotal: Rp 269.000\n\nInstruksi pembayaran akan dikirim via WhatsApp.\nTerima kasih! 🙏');
+    });
+    // Payment selection
+    document.querySelectorAll('.payment-opt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.payment-opt').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>

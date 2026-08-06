@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mix & Match Builder - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    body{background:#111;}
+    .mm-container{max-width:1100px;margin:0 auto;padding:40px 20px;}
+    .mm-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px;}
+    .mm-slot h4{font-size:15px;font-weight:600;margin-bottom:12px;text-align:center;color:#ccc;}
+    .mm-option{
+      padding:14px;border:1px solid #2a2a2a;border-radius:12px;
+      margin-bottom:10px;cursor:pointer;text-align:center;transition:all .3s;
+      background:#1a1a1a;color:#ddd;
+    }
+    .mm-option:hover{border-color:rgba(201,169,110,.4);}
+    .mm-option.selected{border-color:#C9A96E;background:rgba(201,169,110,.08);}
+    .mm-icon{font-size:28px;display:block;margin-bottom:6px;}
+    .mm-name{font-size:12px;font-weight:500;color:#aaa;}
+    .mm-preview{
+      background:#1a1a1a;border-radius:20px;padding:30px;
+      border:1px solid #2a2a2a;text-align:center;
+    }
+    .mm-mannequin{margin-bottom:20px;}
+    .mm-summary p{font-size:13px;margin:6px 0;color:#aaa;}
+    .mm-summary strong{color:#C9A96E;}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="mix-match.html" class="active">Mix & Match</a>
+        <a href="by-request.html">By Request</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mm-container">
+    <div class="section-header">
+      <h2>Mix & Match Builder<span class="dot">.</span></h2>
+      <p>Kombinasikan atasan, bawahan, dan khimar. Lihat hasilnya sebelum beli!</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="mm-grid">
+      <div class="mm-slot">
+        <h4>👗 Atasan</h4>
+        <div id="mm-top"></div>
+      </div>
+      <div class="mm-slot">
+        <h4>👖 Bawahan</h4>
+        <div id="mm-bottom"></div>
+      </div>
+      <div class="mm-slot">
+        <h4>🧕 Khimar</h4>
+        <div id="mm-khimar"></div>
+      </div>
+    </div>
+
+    <div class="mm-preview" id="mm-preview">
+      <p style="color:#999;">Pilih item di atas untuk melihat kombinasi ✨</p>
+    </div>
+  </div>
+
+  <script src="../js/modules/mixMatch.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .pd-container{max-width:1100px;margin:0 auto;padding:40px 20px;}
+    .pd-breadcrumb{font-size:12px;color:#666;margin-bottom:24px;}
+    .pd-breadcrumb a{color:#999;}
+    .pd-breadcrumb a:hover{color:var(--primary);}
+    .pd-layout{display:flex;gap:50px;flex-wrap:wrap;}
+    .pd-gallery{flex:1;min-width:300px;}
+    .pd-main-img{
+      width:100%;height:420px;background:#1a1a1a;border-radius:16px;
+      display:flex;align-items:center;justify-content:center;font-size:80px;
+      border:1px solid #2a2a2a;margin-bottom:14px;
+    }
+    .pd-thumbs{display:flex;gap:10px;}
+    .pd-thumb{
+      width:70px;height:70px;background:#222;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;font-size:24px;
+      border:2px solid transparent;cursor:pointer;transition:all .3s;
+    }
+    .pd-thumb:hover,.pd-thumb.active{border-color:var(--primary);}
+    .pd-info{flex:1;min-width:300px;}
+    .pd-info h1{font-size:26px;font-weight:300;margin-bottom:8px;letter-spacing:1px;}
+    .pd-info .pd-rating{font-size:13px;color:#888;margin-bottom:16px;}
+    .pd-info .pd-rating span{color:var(--primary);}
+    .pd-price{font-size:28px;font-weight:700;color:var(--primary);margin-bottom:20px;}
+    .pd-price .old{font-size:16px;color:#555;text-decoration:line-through;margin-left:10px;}
+    .pd-desc{font-size:14px;color:#999;line-height:1.8;margin-bottom:24px;}
+    .pd-option{margin-bottom:20px;}
+    .pd-option label{display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;}
+    .pd-sizes{display:flex;gap:8px;flex-wrap:wrap;}
+    .pd-size{
+      padding:10px 18px;border:1px solid #333;border-radius:8px;
+      font-size:13px;cursor:pointer;transition:all .3s;color:#ccc;background:#222;
+    }
+    .pd-size:hover,.pd-size.selected{border-color:var(--primary);color:var(--primary);background:rgba(201,169,110,.06);}
+    .pd-colors{display:flex;gap:10px;}
+    .pd-color{
+      width:32px;height:32px;border-radius:50%;cursor:pointer;
+      border:2px solid transparent;transition:all .3s;
+    }
+    .pd-color:hover,.pd-color.selected{border-color:var(--primary);transform:scale(1.15);}
+    .pd-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+    .pd-qty{display:flex;align-items:center;gap:0;border:1px solid #333;border-radius:8px;overflow:hidden;}
+    .pd-qty button{padding:10px 16px;background:#222;color:#ccc;font-size:16px;}
+    .pd-qty button:hover{background:#333;}
+    .pd-qty input{width:50px;text-align:center;border:none;background:#1a1a1a;color:#fff;padding:10px;font-size:14px;}
+    .pd-meta{margin-top:30px;padding-top:20px;border-top:1px solid #2a2a2a;}
+    .pd-meta p{font-size:12px;color:#777;margin-bottom:6px;}
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html" class="active">Katalog</a>
+        <a href="mix-match.html">Mix & Match</a>
+        <a href="by-request.html">By Request</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn cart-badge">&#128722;<span class="badge-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="pd-container">
+    <div class="pd-breadcrumb">
+      <a href="../index.html">Home</a> / <a href="catalog.html">Katalog</a> / <span id="pd-breadcrumb-name">Gamis</span>
+    </div>
+
+    <div class="pd-layout">
+      <!-- GALLERY -->
+      <div class="pd-gallery">
+        <div class="pd-main-img" id="pd-main-img">👗</div>
+        <div class="pd-thumbs">
+          <div class="pd-thumb active">👗</div>
+          <div class="pd-thumb">📐</div>
+          <div class="pd-thumb">🧵</div>
+          <div class="pd-thumb">📦</div>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="pd-info">
+        <h1 id="pd-name">Gamis Pueny Aisyah - Sage</h1>
+        <div class="pd-rating">
+          <span>★★★★★</span> 4.9 · 128 terjual · Kategori: <a href="catalog.html?cat=gamis" style="color:var(--primary);">Gamis</a>
+        </div>
+        <div class="pd-price">
+          Rp 159.000
+          <span class="old">Rp 199.000</span>
+        </div>
+        <p class="pd-desc">
+          Gamis daily dengan bahan ceruty premium yang adem dan tidak menerawang.
+          Jahitan rapi, cutting A-line yang flattering untuk semua bentuk tubuh.
+          Cocok untuk aktivitas sehari-hari, kuliah, atau hangout.
+        </p>
+
+        <!-- SIZE -->
+        <div class="pd-option">
+          <label>Pilih Ukuran</label>
+          <div class="pd-sizes">
+            <div class="pd-size">S</div>
+            <div class="pd-size selected">M</div>
+            <div class="pd-size">L</div>
+            <div class="pd-size">XL</div>
+            <div class="pd-size">XXL</div>
+          </div>
+        </div>
+
+        <!-- COLOR -->
+        <div class="pd-option">
+          <label>Pilih Warna</label>
+          <div class="pd-colors">
+            <div class="pd-color selected" style="background:#A8B5A0;" title="Sage"></div>
+            <div class="pd-color" style="background:#F5E6D3;" title="Cream"></div>
+            <div class="pd-color" style="background:#D4A574;" title="Dusty Rose"></div>
+            <div class="pd-color" style="background:#2C3E50;" title="Navy"></div>
+          </div>
+        </div>
+
+        <!-- QTY + ACTIONS -->
+        <div class="pd-actions">
+          <div class="pd-qty">
+            <button onclick="changeQty(-1)">−</button>
+            <input type="number" id="pd-qty" value="1" min="1" max="10" readonly>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+          <button class="btn btn-primary" onclick="addToCartDetail()">🛒 Tambah ke Keranjang</button>
+          <button class="btn btn-outline" onclick="buyNow()">Beli Sekarang</button>
+        </div>
+
+        <!-- META -->
+        <div class="pd-meta">
+          <p>📦 Pengiriman: 2-4 hari kerja</p>
+          <p>🔄 Return: 7 hari (syarat berlaku)</p>
+          <p>🧵 Bahan: Ceruty Premium</p>
+          <p>📏 Size Chart: <a href="size-finder.html" style="color:var(--primary);">Cari Ukuranmu →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pueny Collections</p>
+      <p class="tagline">"Anggun, Modest dan Stylish dalam Fitrah"</p>
+    </div>
+  </footer>
+
+  <script>
+    function changeQty(delta) {
+      const input = document.getElementById('pd-qty');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      if (val > 10) val = 10;
+      input.value = val;
+    }
+    function addToCartDetail() {
+      alert('Ditambahkan ke keranjang! 🛒');
+    }
+    function buyNow() {
+      window.location.href = 'checkout.html';
+    }
+    // Size & color selection
+    document.querySelectorAll('.pd-size').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.pd-size').forEach(s => s.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+    });
+    document.querySelectorAll('.pd-color').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.pd-color').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>

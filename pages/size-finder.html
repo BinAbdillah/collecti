@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size Finder - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    body{background:#111;}
+    .sf-container{max-width:600px;margin:0 auto;padding:40px 20px;}
+    .sf-form{background:#1a1a1a;border-radius:20px;padding:36px;border:1px solid #2a2a2a;}
+    .sf-form label{display:block;font-size:13px;font-weight:600;margin:16px 0 6px;color:#ccc;}
+    .sf-form input,.sf-form select{
+      width:100%;padding:12px 16px;background:#222;border:1px solid #333;
+      border-radius:10px;font-size:14px;outline:none;color:#F5F0E8;
+    }
+    .sf-form input:focus,.sf-form select:focus{border-color:#C9A96E;}
+    .sf-form input::placeholder{color:#555;}
+    .sf-result-card{
+      text-align:center;padding:30px;background:#1a1a1a;
+      border:1px solid rgba(201,169,110,.2);border-radius:16px;margin-top:24px;
+    }
+    .sf-size{font-size:48px;font-weight:900;color:#C9A96E;margin:12px 0;}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html">Katalog</a>
+        <a href="size-finder.html" class="active">Size Finder</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sf-container">
+    <div class="section-header">
+      <h2>Size Finder<span class="dot">.</span></h2>
+      <p>Input data kamu, kami rekomendasikan ukuran paling pas</p>
+      <div class="line"></div>
+    </div>
+
+    <form class="sf-form" id="sizeForm">
+      <label for="sf-height">Tinggi Badan (cm)</label>
+      <input type="number" id="sf-height" placeholder="Contoh: 160" min="140" max="200" required>
+
+      <label for="sf-weight">Berat Badan (kg)</label>
+      <input type="number" id="sf-weight" placeholder="Contoh: 55" min="35" max="150" required>
+
+      <label for="sf-category">Kategori Produk</label>
+      <select id="sf-category">
+        <option value="gamis">Gamis</option>
+        <option value="kebaya">Kebaya Muslimah</option>
+        <option value="kulot">Kulot</option>
+        <option value="khimar">Khimar</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:24px;">
+        📐 Cari Ukuran Saya
+      </button>
+    </form>
+
+    <div id="sf-result" style="display:none;"></div>
+  </div>
+
+  <script src="../js/modules/sizeFinder.js"></script>
+</body>
+</html>

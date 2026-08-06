@@ -1,0 +1,40 @@
+{
+    "testimonials": [
+      {
+        "name": "Aisyah R.",
+        "location": "Jakarta",
+        "rating": 5,
+        "text": "Bahannya adem, jahitan rapi. Udah 3x order nggak pernah kecewa. Gamisnya nggak nerawang!"
+      },
+      {
+        "name": "Fatimah Z.",
+        "location": "Bandung",
+        "rating": 5,
+        "text": "Kebaya muslimahnya cantik banget. Dipakai kondangan banyak yang nanya beli di mana."
+      },
+      {
+        "name": "Khadijah M.",
+        "location": "Surabaya",
+        "rating": 5,
+        "text": "By request-nya luar biasa. Minta ukuran custom buat ibu saya, hasilnya pas sempurna. Terima kasih Pueny!"
+      },
+      {
+        "name": "Zahra A.",
+        "location": "Yogyakarta",
+        "rating": 4,
+        "text": "Khimar instan-nya praktis banget buat daily. Harga affordable, kualitas nggak murahan."
+      },
+      {
+        "name": "Maryam S.",
+        "location": "Makassar",
+        "rating": 5,
+        "text": "Fitur Size Finder-nya akurat! Pertama kali beli online nggak salah ukuran. Kulotnya nyaman banget."
+      },
+      {
+        "name": "Hana P.",
+        "location": "Semarang",
+        "rating": 5,
+        "text": "Mix & Match Builder-nya seru! Bisa lihat kombinasi sebelum beli. Hemat waktu dan nggak salah pilih."
+      }
+    ]
+  }

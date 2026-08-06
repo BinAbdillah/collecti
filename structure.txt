@@ -1,0 +1,51 @@
+﻿pueny-collections/
+│
+├── index.html
+│
+├── css/
+│   ├── main.css
+│   ├── components.css
+│   ├── responsive.css
+│   └── admin.css
+│
+├── js/
+│   ├── main.js
+│   ├── modules/
+│   │   ├── mixMatch.js
+│   │   ├── sizeFinder.js
+│   │   ├── styleMyLook.js
+│   │   ├── cart.js
+│   │   └── productFilter.js
+│   └── admin.js
+│
+├── pages/
+│   ├── catalog.html
+│   ├── product-detail.html
+│   ├── mix-match.html
+│   ├── size-finder.html
+│   ├── style-my-look.html
+│   ├── by-request.html
+│   ├── cart.html
+│   └── checkout.html
+│
+├── data/
+│   ├── products.json
+│   ├── categories.json
+│   └── testimonials.json
+│
+├── assets/
+│   ├── images/
+│   │   ├── hero/
+│   │   ├── products/
+│   │   └── banners/
+│   ├── icons/
+│   └── fonts/
+│
+├── admin/
+│   ├── index.html
+│   ├── dashboard.html
+│   ├── products.html
+│   ├── orders.html
+│   └── requests.html
+│
+└── README.md

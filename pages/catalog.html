@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog - Pueny Collections</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <style>
+    .catalog-container{max-width:1300px;margin:0 auto;padding:40px 20px;}
+    .catalog-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:30px;}
+    .catalog-header h2{font-size:28px;font-weight:200;letter-spacing:2px;}
+    .catalog-header h2 span{color:var(--primary);}
+    .catalog-count{font-size:13px;color:#777;}
+    .catalog-filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px;}
+    .filter-group{display:flex;align-items:center;gap:8px;}
+    .filter-group label{font-size:12px;color:#888;}
+    .filter-group select{
+      padding:8px 14px;background:#222;border:1px solid #333;
+      border-radius:8px;color:#ddd;font-size:12px;outline:none;
+    }
+    .filter-group select:focus{border-color:var(--primary);}
+    .catalog-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+    }
+    .catalog-sidebar{width:220px;}
+    .catalog-body{flex:1;}
+    .catalog-layout{display:flex;gap:30px;}
+    .sidebar-section{margin-bottom:24px;}
+    .sidebar-section h4{font-size:13px;font-weight:600;color:#ccc;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;}
+    .sidebar-section label{display:flex;align-items:center;gap:8px;font-size:13px;color:#999;margin-bottom:8px;cursor:pointer;}
+    .sidebar-section input[type="checkbox"]{accent-color:var(--primary);}
+    .price-range{display:flex;gap:8px;align-items:center;}
+    .price-range input{
+      width:80px;padding:8px;background:#222;border:1px solid #333;
+      border-radius:6px;color:#ddd;font-size:12px;outline:none;
+    }
+    .no-result{text-align:center;padding:60px 20px;color:#666;}
+    .no-result .icon{font-size:60px;margin-bottom:16px;opacity:.5;}
+    @media(max-width:900px){
+      .catalog-layout{flex-direction:column;}
+      .catalog-sidebar{width:100%;}
+      .catalog-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:500px){.catalog-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="catalog.html" class="active">Katalog</a>
+        <a href="mix-match.html">Mix & Match</a>
+        <a href="by-request.html">By Request</a>
+        <a href="catalog.html?collection=iedl-fitri">Ied Fitri</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#9825;</button>
+        <button class="icon-btn cart-badge">&#128722;<span class="badge-count">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATALOG -->
+  <div class="catalog-container">
+    <div class="catalog-header">
+      <h2>Semua <span>Koleksi</span></h2>
+      <div class="catalog-count" id="catalogCount">Menampilkan 8 produk</div>
+    </div>
+
+    <div class="catalog-layout">
+      <!-- SIDEBAR FILTER -->
+      <aside class="catalog-sidebar">
+        <div class="sidebar-section">
+          <h4>Kategori</h4>
+          <label><input type="checkbox" value="gamis" onchange="applyFilters()"> Gamis</label>
+          <label><input type="checkbox" value="kebaya" onchange="applyFilters()"> Kebaya Muslimah</label>
+          <label><input type="checkbox" value="kulot" onchange="applyFilters()"> Kulot</label>
+          <label><input type="checkbox" value="khimar" onchange="applyFilters()"> Khimar</label>
+        </div>
+        <div class="sidebar-section">
+          <h4>Koleksi</h4>
+          <label><input type="checkbox" value="daily" onchange="applyFilters()"> Daily</label>
+          <label><input type="checkbox" value="iedl-fitri" onchange="applyFilters()"> Ied Fitri</label>
+          <label><input type="checkbox" value="by-request" onchange="applyFilters()"> By Request</label>
+        </div>
+        <div class="sidebar-section">
+          <h4>Harga</h4>
+          <div class="price-range">
+            <input type="number" id="priceMin" placeholder="Min" onchange="applyFilters()">
+            <span style="color:#666;">–</span>
+            <input type="number" id="priceMax" placeholder="Max" onchange="applyFilters()">
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>Ukuran</h4>
+          <label><input type="checkbox" value="S"> S</label>
+          <label><input type="checkbox" value="M"> M</label>
+          <label><input type="checkbox" value="L"> L</label>
+          <label><input type="checkbox" value="XL"> XL</label>
+          <label><input type="checkbox" value="XXL"> XXL</label>
+          <label><input type="checkbox" value="All Size"> All Size</label>
+        </div>
+      </aside>
+
+      <!-- PRODUK GRID -->
+      <div class="catalog-body">
+        <div class="catalog-filters">
+          <div class="filter-group">
+            <label>Urutkan:</label>
+            <select id="sortSelect" onchange="applyFilters()">
+              <option value="newest">Terbaru</option>
+              <option value="price-low">Harga Terendah</option>
+              <option value="price-high">Harga Tertinggi</option>
+              <option value="popular">Terlaris</option>
+              <option value="rating">Rating Tertinggi</option>
+            </select>
+          </div>
+        </div>
+        <div class="catalog-grid" id="catalogGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pueny Collections. All rights reserved.</p>
+      <p class="tagline">"Anggun, Modest dan Stylish dalam Fitrah"</p>
+    </div>
+  </footer>
+
+  <script>
+    let allProducts = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('../data/products.json');
+        const data = await res.json();
+        allProducts = data.products;
+        renderProducts(allProducts);
+      } catch(e) {
+        document.getElementById('catalogGrid').innerHTML = '<div class="no-result"><div class="icon">📦</div><p>Gagal memuat produk.</p></div>';
+      }
+    });
+
+    function renderProducts(items) {
+      const grid = document.getElementById('catalogGrid');
+      const count = document.getElementById('catalogCount');
+      count.textContent = `Menampilkan ${items.length} produk`;
+
+      if (items.length === 0) {
+        grid.innerHTML = '<div class="no-result"><div class="icon">🔍</div><p>Tidak ada produk yang cocok.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="product-img">
+            ${getIcon(p.category)}
+            ${p.badge ? `<span class="product-badge ${p.badge}">${getBadge(p.badge)}</span>` : ''}
+          </div>
+          <div class="product-info">
+            <h4>${p.name}</h4>
+            <div class="product-price">
+              Rp ${p.price.toLocaleString('id-ID')}
+              ${p.oldPrice ? `<span class="old">Rp ${p.oldPrice.toLocaleString('id-ID')}</span>` : ''}
+            </div>
+            <div class="product-meta">⭐ ${p.rating} · ${p.sold} terjual</div>
+            <a href="product-detail.html?id=${p.id}" class="product-add">Lihat Detail</a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function applyFilters() {
+      let filtered = [...allProducts];
+      // Sort
+      const sort = document.getElementById('sortSelect').value;
+      if (sort === 'price-low') filtered.sort((a,b) => a.price - b.price);
+      if (sort === 'price-high') filtered.sort((a,b) => b.price - a.price);
+      if (sort === 'popular') filtered.sort((a,b) => b.sold - a.sold);
+      if (sort === 'rating') filtered.sort((a,b) => b.rating - a.rating);
+
+      // Price range
+      const min = parseInt(document.getElementById('priceMin').value) || 0;
+      const max = parseInt(document.getElementById('priceMax').value) || Infinity;
+      filtered = filtered.filter(p => p.price >= min && p.price <= max);
+
+      renderProducts(filtered);
+    }
+
+    function getCategoryIcon(cat) {
+  const map = {
+    gamis:  'i-gamis',
+    kebaya: 'i-kebaya',
+    kulot:  'i-kulot',
+    khimar: 'i-khimar'
+  };
+  const id = map[cat] || 'i-sparkles';
+  return `<svg class="icon icon-prod"><use href="#${id}"/></svg>`;
+}
+    function getBadge(b) {
+      return {new:'NEW',sale:'SALE',festive:'IED FITRI',custom:'CUSTOM'}[b] || '';
+    }
+  </script>
+</body>
+</html>
