@@ -1,0 +1,24 @@
+{
+    "slots": [
+      { "id": "top", "label": "Atasan" },
+      { "id": "bottom", "label": "Bawahan" },
+      { "id": "khimar", "label": "Khimar" }
+    ],
+    "items": {
+      "top": [
+        { "id": "t1", "name": "Gamis Aisyah - Sage", "icon": "👗", "productId": 1 },
+        { "id": "t2", "name": "Kebaya Zahra - Dusty", "icon": "👫", "productId": 2 },
+        { "id": "t3", "name": "Tunik Nadia - Cream", "icon": "👚", "productId": null }
+      ],
+      "bottom": [
+        { "id": "b1", "name": "Kulot Plisket - Mocca", "icon": "👖", "productId": 3 },
+        { "id": "b2", "name": "Kulot Palazzo - Navy", "icon": "👖", "productId": 8 },
+        { "id": "b3", "name": "Rok Plisket - Black", "icon": "🩱", "productId": null }
+      ],
+      "khimar": [
+        { "id": "k1", "name": "Khimar Cream", "icon": "🧕", "productId": 4 },
+        { "id": "k2", "name": "Khimar Black", "icon": "🧕", "productId": 7 },
+        { "id": "k3", "name": "Khimar Sage", "icon": "🧕", "productId": null }
+      ]
+    }
+  }

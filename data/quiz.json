@@ -1,0 +1,46 @@
+{
+    "questions": [
+      { "id": "occasion", "question": "Untuk acara apa kamu butuh outfit?",
+        "options": [
+          { "value": "daily", "label": "🏠 Daily / Hangout" },
+          { "value": "office", "label": "💼 Kantor / Formal" },
+          { "value": "condangan", "label": "🎉 Kondangan / Acara" },
+          { "value": "lebaran", "label": "🌙 Lebaran / Hari Raya" }
+        ] },
+      { "id": "style", "question": "Gaya apa yang kamu suka?",
+        "options": [
+          { "value": "simple", "label": "✨ Simple & Minimalis" },
+          { "value": "elegant", "label": "👑 Elegan & Mewah" },
+          { "value": "playful", "label": "🌈 Colorful & Fun" },
+          { "value": "syari", "label": "🧕 Syar'i & Longgar" }
+        ] },
+      { "id": "color", "question": "Warna favorit kamu?",
+        "options": [
+          { "value": "neutral", "label": "🤍 Netral (Cream, Putih, Abu)" },
+          { "value": "earth", "label": "🤎 Earth Tone (Mocca, Sage, Terracotta)" },
+          { "value": "dark", "label": "🖤 Gelap (Navy, Black, Maroon)" },
+          { "value": "pastel", "label": "💜 Pastel (Dusty, Lilac, Peach)" }
+        ] },
+      { "id": "budget", "question": "Budget kamu berapa?",
+        "options": [
+          { "value": "low", "label": "💰 Under Rp 100.000" },
+          { "value": "mid", "label": "💰💰 Rp 100.000 - 200.000" },
+          { "value": "high", "label": "💰💰💰 Rp 200.000+" }
+        ] }
+    ],
+    "recommendations": {
+      "occasion": {
+        "daily": { "icon": "👗", "name": "Gamis Daily", "reason": "Nyaman untuk aktivitas sehari-hari" },
+        "office": { "icon": "👚", "name": "Tunik + Kulot", "reason": "Profesional tapi tetap modest" },
+        "condangan": { "icon": "👫", "name": "Kebaya Muslimah", "reason": "Elegan untuk acara spesial" },
+        "lebaran": { "icon": "🌙", "name": "Koleksi Ied Fitri", "reason": "Spesial untuk Hari Kemenangan" }
+      },
+      "style": {
+        "syari": { "icon": "🧕", "name": "Khimar Syar'i", "reason": "Menutup sempurna, tetap stylish" },
+        "_default": { "icon": "🧣", "name": "Khimar Instan", "reason": "Praktis dan versatile" }
+      },
+      "always": [
+        { "icon": "👖", "name": "Kulot Plisket", "reason": "Mix & match dengan atasan apapun" }
+      ]
+    }
+  }
