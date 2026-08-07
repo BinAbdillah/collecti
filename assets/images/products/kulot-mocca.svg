@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#151515"/></linearGradient>
+<!-- WARNA KULOT -->
+<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C4A882"/><stop offset="1" stop-color="#A78B66"/></linearGradient>
+<!-- WARNA ATASAN -->
+<linearGradient id="tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5E6D3"/><stop offset="1" stop-color="#E0CDB4"/></linearGradient>
+</defs>
+<rect width="400" height="500" fill="url(#bg)"/>
+<circle cx="200" cy="240" r="150" fill="none" stroke="#C9A96E" stroke-opacity=".12"/>
+<path d="M164 96h72l8 92h-88z" fill="url(#tp)"/>
+<path d="M164 96c-16 8-26 24-29 48l-4 40 20 5 7-50c2-18 4-30 6-43z" fill="url(#tp)"/>
+<path d="M236 96c16 8 26 24 29 48l4 40-20-5-7-50c-2-18-4-30-6-43z" fill="url(#tp)"/>
+<rect x="156" y="188" width="88" height="14" rx="7" fill="#C9A96E"/>
+<path d="M158 202h40l-2 238h-52c2-80 6-160 14-238z" fill="url(#fb)"/>
+<path d="M202 202h40c8 78 12 158 14 238h-52z" fill="url(#fb)"/>
+<path d="M172 210c-4 70-6 150-7 226M228 210c4 70 6 150 7 226" stroke="#00000025" stroke-width="3" fill="none"/>
+<text x="200" y="476" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#C9A96E" letter-spacing="4">PUENY · KULOT</text>
+</svg>

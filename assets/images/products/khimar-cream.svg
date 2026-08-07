@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#151515"/></linearGradient>
+<!-- WARNA KHIMAR -->
+<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7EBDD"/><stop offset="1" stop-color="#DCC9B2"/></linearGradient>
+</defs>
+<rect width="400" height="500" fill="url(#bg)"/>
+<circle cx="200" cy="240" r="150" fill="none" stroke="#C9A96E" stroke-opacity=".12"/>
+<path d="M200 46c-40 0-64 28-64 66 0 60 24 96 30 150l-14 128h96l-14-128c6-54 30-90 30-150 0-38-24-66-64-66z" fill="url(#fb)"/>
+<ellipse cx="200" cy="118" rx="30" ry="38" fill="#242424"/>
+<ellipse cx="200" cy="120" rx="24" ry="32" fill="#1a1a1a"/>
+<path d="M170 150c-8 60-14 120-16 200M230 150c8 60 14 120 16 200" stroke="#00000018" stroke-width="3" fill="none"/>
+<path d="M152 390h96" stroke="#C9A96E" stroke-width="3"/>
+<text x="200" y="476" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#C9A96E" letter-spacing="4">PUENY · KHIMAR</text>
+</svg>

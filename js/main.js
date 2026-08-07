@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
     grid.innerHTML = items.map(p => `
       <div class="product-card" data-category="${p.category}">
-        <div class="product-img">
-          ${getCategoryIcon(p.category)}
-          ${p.badge ? `<span class="product-badge ${p.badge}">${getBadgeText(p.badge)}</span>` : ''}
-        </div>
+      <div class="product-img">
+      ${p.image ? `<img src="${p.image}" alt="${p.name}">` : getCategoryIcon(p.category)}
+      ${p.badge ? `<span class="product-badge ${p.badge}">${getBadgeText(p.badge)}</span>` : ''}
+    </div>
         <div class="product-info">
           <h4>${p.name}</h4>
           <div class="product-price">

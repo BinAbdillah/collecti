@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#151515"/></linearGradient>
+<!-- WARNA KEBAYA -->
+<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3C3B0"/><stop offset="1" stop-color="#C9A08C"/></linearGradient>
+<!-- WARNA ROK -->
+<linearGradient id="rk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A7A6A"/><stop offset="1" stop-color="#6A5C4E"/></linearGradient>
+<linearGradient id="hb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8BBA6"/><stop offset="1" stop-color="#C9A08C"/></linearGradient>
+</defs>
+<rect width="400" height="500" fill="url(#bg)"/>
+<circle cx="200" cy="240" r="150" fill="none" stroke="#C9A96E" stroke-opacity=".12"/>
+<path d="M200 50c-26 0-42 19-42 44 0 28 16 42 16 60h52c0-18 16-32 16-60 0-25-16-44-42-44z" fill="url(#hb)"/>
+<path d="M166 154h68l6 96h-80z" fill="url(#fb)"/>
+<path d="M186 154l14 20 14-20" fill="none" stroke="#00000030" stroke-width="3"/>
+<circle cx="200" cy="186" r="3" fill="#C9A96E"/><circle cx="200" cy="204" r="3" fill="#C9A96E"/><circle cx="200" cy="222" r="3" fill="#C9A96E"/>
+<path d="M166 154c-18 9-28 28-31 54l-4 44 22 5 7-55c2-20 4-34 6-48z" fill="url(#fb)"/>
+<path d="M234 154c18 9 28 28 31 54l4 44-22-5-7-55c-2-20-4-34-6-48z" fill="url(#fb)"/>
+<path d="M160 250h80l14 190H146z" fill="url(#rk)"/>
+<path d="M180 260c-4 60-6 120-7 176M220 260c4 60 6 120 7 176" stroke="#00000025" stroke-width="3" fill="none"/>
+<text x="200" y="476" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#C9A96E" letter-spacing="4">PUENY · KEBAYA ZAHRA</text>
+</svg>

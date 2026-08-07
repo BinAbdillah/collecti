@@ -164,9 +164,9 @@
       grid.innerHTML = items.map(p => `
         <div class="product-card">
           <div class="product-img">
-            ${getIcon(p.category)}
-            ${p.badge ? `<span class="product-badge ${p.badge}">${getBadge(p.badge)}</span>` : ''}
-          </div>
+  ${p.image ? `<img src="../${p.image}" alt="${p.name}">` : getIcon(p.category)}
+  ${p.badge ? `<span class="product-badge ${p.badge}">${getBadge(p.badge)}</span>` : ''}
+</div>
           <div class="product-info">
             <h4>${p.name}</h4>
             <div class="product-price">

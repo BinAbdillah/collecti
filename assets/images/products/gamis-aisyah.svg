@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#151515"/></linearGradient>
+<!-- WARNA GAMIS: ganti 2 stop-color ini -->
+<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B7C4AE"/><stop offset="1" stop-color="#8FA086"/></linearGradient>
+</defs>
+<rect width="400" height="500" fill="url(#bg)"/>
+<circle cx="200" cy="240" r="150" fill="none" stroke="#C9A96E" stroke-opacity=".12"/>
+<path d="M200 48c-28 0-45 20-45 47 0 30 17 45 17 65h56c0-20 17-35 17-65 0-27-17-47-45-47z" fill="url(#fb)"/>
+<path d="M162 160h76l9 70c13 90 21 158 25 210H128c4-52 12-120 25-210z" fill="url(#fb)"/>
+<path d="M162 160c-20 10-32 32-36 62l-6 60 25 6 8-62c3-25 6-46 9-66z" fill="url(#fb)"/>
+<path d="M238 160c20 10 32 32 36 62l6 60-25 6-8-62c-3-25-6-46-9-66z" fill="url(#fb)"/>
+<rect x="158" y="236" width="84" height="9" rx="4.5" fill="#C9A96E"/>
+<path d="M172 258c-6 68-10 126-12 182M200 260v180M228 258c6 68 10 126 12 182" stroke="#00000025" stroke-width="3" fill="none"/>
+<text x="200" y="476" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#C9A96E" letter-spacing="4">PUENY · GAMIS AISYAH</text>
+</svg>
