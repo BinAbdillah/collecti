@@ -321,3 +321,12 @@ img{max-width:100%;display:block;}
   opacity: 1;
   transform: scale(1.1);
 }
+/* ===== ICON SYSTEM FINAL ===== */
+.modern-icon{width:20px;height:20px;display:inline-block;vertical-align:middle;color:inherit;}
+.icon{width:20px;height:20px;display:inline-block;vertical-align:middle;}
+.icon-prod{width:56px;height:56px;color:var(--primary-light);}
+.cat-circle .modern-icon{width:44px;height:44px;color:var(--primary-light);}
+.feature-icon .modern-icon{width:44px;height:44px;color:var(--primary);}
+.nav-actions .modern-icon{width:20px;height:20px;}
+.product-img .modern-icon{width:56px;height:56px;color:var(--primary-light);}
+.hero-img-placeholder .modern-icon{width:90px;height:90px;color:var(--primary-light);}

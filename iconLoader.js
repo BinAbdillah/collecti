@@ -1,25 +1,24 @@
 // js/modules/iconLoader.js
 const IconLoader = {
-  // Unicode escape: aman dari masalah encoding / copy-paste
   emojiMap: {
-    '\u{1F9D7}\u200D\u2640\uFE0F': 'khimar',   // 🧗‍♀️ (hero)
-    '\u{1F457}': 'gamis',                      // 👗
-    '\u{1F46B}': 'kebaya',                     // 👫
-    '\u{1F456}': 'kulot',                      // 👖
-    '\u{1F9D5}': 'khimar',                     // 🧕
-    '\u{1F50D}': 'search',                     // 🔍
-    '\u2661':    'heart',                      // ♡
-    '\u{1F6D2}': 'bag',                        // 🛒
-    '\u{1F6CD}': 'bag',                        // 🛍️
-    '\u{1F464}': 'user',                       // 👤
-    '\u2630':    'menu',                       // ☰
-    '\u{1F319}': 'moon',                       // 🌙
-    '\u2728':    'sparkles',                   // ✨
-    '\u{1F31F}': 'sparkles',                   // 🌟
-    '\u{1F3A8}': 'shuffle',                    // 🎨
-    '\u{1F4D0}': 'ruler',                      // 📐
-    '\u{1F4CF}': 'ruler',                      // 📏
-    '\u{1F483}': 'sparkles'                    // 💃
+    '\u{1F9D7}\u200D\u2640\uFE0F': 'khimar',
+    '\u{1F457}': 'gamis',
+    '\u{1F46B}': 'kebaya',
+    '\u{1F456}': 'kulot',
+    '\u{1F9D5}': 'khimar',
+    '\u{1F50D}': 'search',
+    '\u2661':    'heart',
+    '\u{1F6D2}': 'bag',
+    '\u{1F6CD}': 'bag',
+    '\u{1F464}': 'user',
+    '\u2630':    'menu',
+    '\u{1F319}': 'moon',
+    '\u2728':    'sparkles',
+    '\u{1F31F}': 'sparkles',
+    '\u{1F3A8}': 'shuffle',
+    '\u{1F4D0}': 'ruler',
+    '\u{1F4CF}': 'ruler',
+    '\u{1F483}': 'sparkles'
   },
 
   icons: {},
@@ -31,10 +30,27 @@ const IconLoader = {
       const res = await fetch(jsonPath);
       if (!res.ok) throw new Error('icons.json not found');
       this.icons = await res.json();
+      this.injectSprite();
       this.replaceIcons();
     } catch (e) {
       console.warn('IconLoader: icons.json gagal dimuat, emoji tetap tampil.', e);
     }
+  },
+
+  // BARU: bangun sprite dari icons.json agar <use href="#i-..."> berfungsi
+  injectSprite() {
+    if (document.getElementById('pueny-sprite')) return;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.id = 'pueny-sprite';
+    svg.style.display = 'none';
+    let inner = '';
+    for (const [key, svgStr] of Object.entries(this.icons)) {
+      inner += svgStr
+        .replace('<svg', '<symbol id="i-' + key + '"')
+        .replace('</svg>', '</symbol>');
+    }
+    svg.innerHTML = inner;
+    document.body.prepend(svg);
   },
 
   replaceIcons() {
@@ -42,14 +58,11 @@ const IconLoader = {
     document.querySelectorAll(selectors).forEach(container => {
       let html = container.innerHTML;
       let changed = false;
-
       for (const [emoji, iconName] of Object.entries(this.emojiMap)) {
-        // PENGAMAN: lewati key kosong agar tidak merusak halaman
         if (!emoji || !this.icons[iconName]) continue;
-
         if (html.includes(emoji)) {
-          const svg = this.icons[iconName].replace('<svg', "<svg class='modern-icon'");
-          html = html.split(emoji).join(svg);
+          const use = "<svg class='modern-icon'><use href='#i-" + iconName + "'></use></svg>";
+          html = html.split(emoji).join(use);
           changed = true;
         }
       }
