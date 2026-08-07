@@ -1,128 +1,157 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Pueny Collections</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/responsive.css">
-  <style>
-    .co-container{max-width:700px;margin:0 auto;padding:40px 20px;}
-    .co-form{background:#1a1a1a;border-radius:20px;padding:36px;border:1px solid #2a2a2a;}
-    .co-section{margin-bottom:28px;}
-    .co-section h4{font-size:15px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:1px;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-    .form-group{margin-bottom:14px;}
-    .form-group label{display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;}
-    .form-group input,.form-group select,.form-group textarea{
-      width:100%;padding:12px 14px;background:#222;border:1px solid #333;
-      border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;
-    }
-    .form-group input:focus,.form-group select:focus{border-color:var(--primary);}
-    .form-group textarea{height:70px;resize:vertical;}
-    .payment-options{display:flex;flex-direction:column;gap:10px;}
-    .payment-opt{
-      display:flex;align-items:center;gap:12px;padding:14px;
-      border:1px solid #333;border-radius:10px;cursor:pointer;transition:all .3s;
-    }
-    .payment-opt:hover,.payment-opt.selected{border-color:var(--primary);background:rgba(201,169,110,.04);}
-    .payment-opt input[type="radio"]{accent-color:var(--primary);}
-    .payment-opt span{font-size:13px;color:#ccc;}
-    .co-total{
-      background:#222;border-radius:12px;padding:20px;margin-top:20px;
-      display:flex;justify-content:space-between;align-items:center;
-    }
-    .co-total .label{font-size:14px;color:#aaa;}
-    .co-total .amount{font-size:24px;font-weight:800;color:var(--primary);}
-    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Pueny Collections</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<style>
+  .co-container{max-width:1000px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;}
+  @media(max-width:800px){.co-container{grid-template-columns:1fr;}}
+  .co-form,.co-side{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:26px;height:fit-content;}
+  .co-form h3,.co-side h3{font-size:14px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:1px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-group{margin-bottom:14px;}
+  .form-group label{display:block;font-size:12px;color:#ccc;margin-bottom:6px;}
+  .form-group input,.form-group textarea{width:100%;padding:11px 14px;background:#222;border:1px solid #333;border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--primary);}
+  .payment-options{display:flex;flex-direction:column;gap:10px;}
+  .payment-opt{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid #333;border-radius:10px;cursor:pointer;transition:.3s;font-size:13px;color:#ccc;}
+  .payment-opt:hover{border-color:var(--primary);}
+  .payment-opt input{accent-color:var(--primary);}
+  .co-item{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#bbb;padding:8px 0;border-bottom:1px dashed #2a2a2a;}
+  .co-item b{color:#eee;font-weight:500;}
+  .co-row{display:flex;justify-content:space-between;font-size:13px;color:#999;margin:8px 0;}
+  .co-row.total{font-size:17px;font-weight:700;color:#fff;border-top:1px solid #333;margin-top:12px;padding-top:12px;}
+  .co-row.total span:last-child{color:var(--primary);}
+  .btn-wa{width:100%;margin-top:16px;padding:14px;background:#25D366;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;}
+  .btn-wa:hover{filter:brightness(1.1);}
+  .co-empty{text-align:center;color:#777;padding:30px 0;font-size:13px;}
+</style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="catalog.html">Katalog</a>
-        <a href="cart.html">Keranjang</a>
-        <a href="checkout.html" class="active">Checkout</a>
-      </nav>
+<header class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="catalog.html">Katalog</a>
+      <a href="cart.html">Keranjang</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="cart.html" class="icon-btn cart-badge">🛒<span class="badge-count" id="cartCount">0</span></a>
     </div>
-  </header>
-
-  <div class="co-container">
-    <div class="section-header">
-      <h2>Checkout<span class="dot">.</span></h2>
-      <p>Langkah terakhir sebelum pesanan diproses</p>
-      <div class="line"></div>
-    </div>
-
-    <form class="co-form" id="checkoutForm">
-      <!-- Alamat -->
-      <div class="co-section">
-        <h4>📍 Alamat Pengiriman</h4>
-        <div class="form-row">
-          <div class="form-group"><label>Nama Penerima</label><input type="text" placeholder="Nama lengkap" required></div>
-          <div class="form-group"><label>No. HP</label><input type="tel" placeholder="08xxxxxxxxxx" required></div>
-        </div>
-        <div class="form-group"><label>Alamat Lengkap</label><textarea placeholder="Jalan, RT/RW, Kelurahan, Kecamatan..."></textarea></div>
-        <div class="form-row">
-          <div class="form-group"><label>Kota</label><input type="text" placeholder="Kota"></div>
-          <div class="form-group"><label>Kode Pos</label><input type="text" placeholder="12345"></div>
-        </div>
-      </div>
-
-      <!-- Pembayaran -->
-      <div class="co-section">
-        <h4>💳 Metode Pembayaran</h4>
-        <div class="payment-options">
-          <label class="payment-opt selected"><input type="radio" name="payment" checked><span>🏦 Transfer Bank (BCA / Mandiri / BNI)</span></label>
-          <label class="payment-opt"><input type="radio" name="payment"><span>📱 E-Wallet (GoPay / OVO / DANA / ShopeePay)</span></label>
-          <label class="payment-opt"><input type="radio" name="payment"><span>💵 COD (Cash on Delivery)</span></label>
-          <label class="payment-opt"><input type="radio" name="payment"><span>🏪 Minimarket (Indomaret / Alfamart)</span></label>
-        </div>
-      </div>
-
-      <!-- Catatan -->
-      <div class="co-section">
-        <h4>📝 Catatan (Opsional)</h4>
-        <div class="form-group">
-          <textarea placeholder="Contoh: Tolong packing rapi untuk gift, kirim sebelum tanggal 10..."></textarea>
-        </div>
-      </div>
-
-      <!-- Total -->
-      <div class="co-total">
-        <span class="label">Total Pembayaran</span>
-        <span class="amount">Rp 269.000</span>
-      </div>
-
-      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px;">
-        ✓ Buat Pesanan
-      </button>
-    </form>
   </div>
+</header>
 
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>&copy; 2026 Pueny Collections</p>
+<div class="co-container">
+  <!-- FORM -->
+  <form class="co-form" onsubmit="Checkout.submit();return false;">
+    <h3>📍 ALAMAT PENGIRIMAN</h3>
+    <div class="form-row">
+      <div class="form-group"><label>Nama Penerima</label><input id="co-nama" placeholder="Nama lengkap"></div>
+      <div class="form-group"><label>No. HP</label><input id="co-hp" placeholder="08xxxxxxxxxx"></div>
     </div>
-  </footer>
+    <div class="form-group"><label>Alamat Lengkap</label><textarea id="co-alamat" rows="3" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan"></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label>Kota</label><input id="co-kota" placeholder="Kota"></div>
+      <div class="form-group"><label>Kode Pos</label><input id="co-pos" placeholder="12345"></div>
+    </div>
 
-  <script>
-    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Pesanan berhasil dibuat! ✅\n\nOrder ID: PNY-2026-0157\nTotal: Rp 269.000\n\nInstruksi pembayaran akan dikirim via WhatsApp.\nTerima kasih! 🙏');
+    <h3>💳 METODE PEMBAYARAN</h3>
+    <div class="payment-options">
+      <label class="payment-opt"><input type="radio" name="payment" value="Transfer Bank" checked> 🏦 Transfer Bank (BCA / Mandiri / BNI)</label>
+      <label class="payment-opt"><input type="radio" name="payment" value="E-Wallet"> 📱 E-Wallet (OVO / DANA / GoPay)</label>
+      <label class="payment-opt"><input type="radio" name="payment" value="COD"> 🚚 COD (Bayar di Tempat)</label>
+    </div>
+
+    <div class="form-group" style="margin-top:14px;">
+      <label>Catatan (opsional)</label>
+      <textarea id="co-catatan" rows="2" placeholder="Contoh: packing rapi untuk gift"></textarea>
+    </div>
+  </form>
+
+  <!-- RINGKASAN -->
+  <aside class="co-side">
+    <h3>🧾 RINGKASAN PESANAN</h3>
+    <div id="coItems"></div>
+    <div class="co-row"><span>Subtotal</span><span id="coSubtotal">Rp 0</span></div>
+    <div class="co-row"><span>Ongkir</span><span style="color:#4CAF50;">GRATIS</span></div>
+    <div class="co-row total"><span>Total</span><span id="coTotal">Rp 0</span></div>
+    <button class="btn-wa" onclick="Checkout.submit()">📱 Buat Pesanan via WhatsApp</button>
+    <p style="font-size:11px;color:#666;text-align:center;margin-top:10px;">Pesanan terkirim otomatis ke WhatsApp admin Pueny.</p>
+  </aside>
+</div>
+
+<script>
+const WA_NUMBER = '6287721552251'; // ← GANTI dengan nomor WA toko (format 62...)
+
+const Checkout = {
+  items: [], products: [],
+
+  async init() {
+    try { this.items = JSON.parse(localStorage.getItem('pueny_cart') || '[]'); } catch (e) { this.items = []; }
+    try {
+      const res = await fetch('../data/products.json');
+      if (res.ok) this.products = (await res.json()).products || [];
+    } catch (e) {}
+    const b = document.getElementById('cartCount');
+    if (b) b.textContent = this.items.reduce((s, i) => s + i.qty, 0);
+    this.render();
+  },
+
+  info(i) {
+    const p = this.products.find(x => x.id === i.id);
+    return { name: p ? p.name : 'Produk #' + i.id, price: p ? p.price : 0 };
+  },
+
+  getTotal() { return this.items.reduce((s, i) => s + this.info(i).price * i.qty, 0); },
+
+  render() {
+    const w = document.getElementById('coItems');
+    if (!this.items.length) {
+      w.innerHTML = '<div class="co-empty">Keranjang kosong.<br><a href="catalog.html" style="color:var(--primary);">← Kembali ke katalog</a></div>';
+    } else {
+      w.innerHTML = this.items.map(i => {
+        const d = this.info(i);
+        return '<div class="co-item"><span><b>' + d.name + '</b> ×' + i.qty + '</span><span>Rp ' + (d.price * i.qty).toLocaleString('id-ID') + '</span></div>';
+      }).join('');
+    }
+    const t = 'Rp ' + this.getTotal().toLocaleString('id-ID');
+    document.getElementById('coSubtotal').textContent = t;
+    document.getElementById('coTotal').textContent = t;
+  },
+
+  submit() {
+    if (!this.items.length) { alert('Keranjang masih kosong! 🛒'); return; }
+    const nama = document.getElementById('co-nama').value.trim();
+    const hp = document.getElementById('co-hp').value.trim();
+    const alamat = document.getElementById('co-alamat').value.trim();
+    if (!nama || !hp || !alamat) { alert('Mohon lengkapi nama, No. HP, dan alamat ya! 📍'); return; }
+    const pay = (document.querySelector('input[name="payment"]:checked') || {}).value || '-';
+    const kota = document.getElementById('co-kota').value.trim();
+    const pos = document.getElementById('co-pos').value.trim();
+    const cat = document.getElementById('co-catatan').value.trim();
+
+    let txt = '*PESANAN BARU - PUENY COLLECTIONS*\n--------------------------\n';
+    this.items.forEach((i, n) => {
+      const d = this.info(i);
+      txt += (n + 1) + '. ' + d.name + ' (x' + i.qty + ') = Rp ' + (d.price * i.qty).toLocaleString('id-ID') + '\n';
     });
-    // Payment selection
-    document.querySelectorAll('.payment-opt').forEach(opt => {
-      opt.addEventListener('click', () => {
-        document.querySelectorAll('.payment-opt').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-      });
-    });
-  </script>
+    txt += '--------------------------\n';
+    txt += 'Total: *Rp ' + this.getTotal().toLocaleString('id-ID') + '* (GRATIS ONGKIR)\n\n';
+    txt += '*Nama:* ' + nama + '\n*HP:* ' + hp + '\n';
+    txt += '*Alamat:* ' + alamat + (kota ? ', ' + kota : '') + (pos ? ' (' + pos + ')' : '') + '\n';
+    txt += '*Pembayaran:* ' + pay + '\n';
+    if (cat) txt += '*Catatan:* ' + cat + '\n';
+
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt), '_blank');
+  }
+};
+document.addEventListener('DOMContentLoaded', () => Checkout.init());
+</script>
 </body>
 </html>

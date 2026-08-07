@@ -1,157 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>By Request - Pueny Collections</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/responsive.css">
-  <style>
-    .br-container{max-width:800px;margin:0 auto;padding:40px 20px;}
-    .br-form{background:#1a1a1a;border-radius:20px;padding:40px;border:1px solid #2a2a2a;}
-    .br-form h3{font-size:20px;font-weight:300;margin-bottom:6px;letter-spacing:1px;}
-    .br-form .sub{font-size:13px;color:#888;margin-bottom:30px;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-    .form-group{margin-bottom:16px;}
-    .form-group label{display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
-    .form-group input,.form-group select,.form-group textarea{
-      width:100%;padding:12px 16px;background:#222;border:1px solid #333;
-      border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;font-family:inherit;
-    }
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);}
-    .form-group textarea{height:100px;resize:vertical;}
-    .form-group input::placeholder,.form-group textarea::placeholder{color:#555;}
-    .br-note{
-      background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.15);
-      border-radius:12px;padding:16px;margin:20px 0;font-size:12px;color:#aaa;line-height:1.6;
-    }
-    .br-note strong{color:var(--primary);}
-    .upload-area{
-      border:2px dashed #333;border-radius:12px;padding:30px;text-align:center;
-      cursor:pointer;transition:all .3s;color:#777;font-size:13px;
-    }
-    .upload-area:hover{border-color:var(--primary);color:var(--primary);}
-    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>By Request - Pueny Collections</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<style>
+  .br-container{max-width:1000px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;}
+  @media(max-width:800px){.br-container{grid-template-columns:1fr;}}
+  .br-form,.br-info{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:26px;height:fit-content;}
+  .br-form h3,.br-info h3{font-size:14px;font-weight:600;color:var(--primary);margin-bottom:16px;letter-spacing:1px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-group{margin-bottom:14px;}
+  .form-group label{display:block;font-size:12px;color:#ccc;margin-bottom:6px;}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;background:#222;border:1px solid #333;border-radius:10px;color:#F5F0E8;font-size:13px;outline:none;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);}
+  .br-steps{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+  .br-step{display:flex;gap:12px;align-items:center;font-size:13px;color:#bbb;}
+  .br-step .num{width:26px;height:26px;border-radius:50%;background:rgba(201,169,110,.15);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+  .br-note{background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:10px;padding:14px;font-size:12px;color:#bbb;}
+  .btn-wa{width:100%;margin-top:6px;padding:14px;background:#25D366;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;}
+  .btn-wa:hover{filter:brightness(1.1);}
+</style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="catalog.html">Katalog</a>
-        <a href="by-request.html" class="active">By Request</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="cart.html" class="icon-btn cart-badge">🛒<span class="badge-count" id="cartCount">0</span></a>      </div>
+<header class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">Pueny<span>Collections</span></a>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="catalog.html">Katalog</a>
+      <a href="mix-match.html">Mix & Match</a>
+      <a href="cart.html">Keranjang</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="cart.html" class="icon-btn cart-badge">🛒<span class="badge-count" id="cartCount">0</span></a>
     </div>
-  </header>
-
-  <div class="br-container">
-    <div class="section-header">
-      <h2>By <span style="color:var(--primary);">Request</span></h2>
-      <p>Custom pakaian sesuai keinginanmu</p>
-      <div class="line"></div>
-    </div>
-
-    <form class="br-form" id="requestForm">
-      <h3>📝 Form Custom Order</h3>
-      <p class="sub">Isi detail di bawah, tim kami akan konfirmasi dalam 1x24 jam via WhatsApp.</p>
-
-      <!-- Data Diri -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Nama Lengkap</label>
-          <input type="text" placeholder="Nama kamu" required>
-        </div>
-        <div class="form-group">
-          <label>No. WhatsApp</label>
-          <input type="tel" placeholder="08xxxxxxxxxx" required>
-        </div>
-      </div>
-
-      <!-- Produk -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Kategori</label>
-          <select required>
-            <option value="">-- Pilih --</option>
-            <option>Gamis</option>
-            <option>Kebaya Muslimah</option>
-            <option>Kulot</option>
-            <option>Khimar</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Ukuran</label>
-          <select required>
-            <option value="">-- Pilih --</option>
-            <option>S</option><option>M</option><option>L</option>
-            <option>XL</option><option>XXL</option><option>Custom (tulis di catatan)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Bahan</label>
-          <select>
-            <option value="">-- Pilih --</option>
-            <option>Ceruty</option>
-            <option>Wolfis</option>
-            <option>Satin</option>
-            <option>Linen</option>
-            <option>Katun Jepang</option>
-            <option>Belum tahu (konsultasi dulu)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Warna</label>
-          <input type="text" placeholder="Contoh: Sage green, Dusty rose...">
-        </div>
-      </div>
-
-      <!-- Upload Referensi -->
-      <div class="form-group">
-        <label>Referensi Model (opsional)</label>
-        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
-          📎 Klik untuk upload gambar referensi<br>
-          <small>(JPG, PNG, max 5MB)</small>
-        </div>
-        <input type="file" id="fileInput" accept="image/*" style="display:none;">
-      </div>
-
-      <!-- Catatan -->
-      <div class="form-group">
-        <label>Catatan Tambahan</label>
-        <textarea placeholder="Contoh: Minta lengan lebih panjang, tambah saku di kanan, dll..."></textarea>
-      </div>
-
-      <!-- Note -->
-      <div class="br-note">
-        <strong>ℹ️ Info:</strong> Pengerjaan 7-14 hari kerja. Harga mulai Rp 150.000 tergantung bahan & kompleksitas. DP 50% di awal, pelunasan sebelum kirim.
-      </div>
-
-      <button type="submit" class="btn btn-primary" style="width:100%;">Kirim Request 📩</button>
-    </form>
   </div>
+</header>
 
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>&copy; 2026 Pueny Collections</p>
-      <p class="tagline">"Anggun, Modest dan Stylish dalam Fitrah"</p>
+<div class="br-container">
+  <!-- FORM -->
+  <form class="br-form" onsubmit="ByRequest.submit();return false;">
+    <h3>📝 FORM CUSTOM REQUEST</h3>
+    <div class="form-row">
+      <div class="form-group"><label>Nama</label><input id="br-nama" placeholder="Nama lengkap"></div>
+      <div class="form-group"><label>No. HP / WA</label><input id="br-hp" placeholder="08xxxxxxxxxx"></div>
     </div>
-  </footer>
+    <div class="form-row">
+      <div class="form-group"><label>Kategori</label>
+        <select id="br-kategori">
+          <option>Gamis</option><option>Kebaya Muslimah</option><option>Kulot</option><option>Khimar</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Ukuran</label>
+        <select id="br-ukuran">
+          <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Custom (sebutkan di catatan)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Bahan</label>
+        <select id="br-bahan">
+          <option>Katun Jepang</option><option>Wolfis</option><option>Ceruty</option><option>Satin</option><option>Plisket Premium</option><option>Rekomendasi Admin</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Warna</label><input id="br-warna" placeholder="Contoh: Sage green / Dusty pink"></div>
+    </div>
+    <div class="form-group"><label>Referensi Model (opsional)</label><input id="br-ref" placeholder="Link foto / deskripsi model keinginanmu"></div>
+    <div class="form-group"><label>Catatan Tambahan</label><textarea id="br-catatan" rows="3" placeholder="Contoh: lengan lebih panjang, tambah saku, lingkar dada 100 cm"></textarea></div>
+    <button class="btn-wa">📱 Kirim Request via WhatsApp</button>
+  </form>
 
-  <script>
-    document.getElementById('requestForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Request terkirim! ✅\nTim Pueny akan menghubungi kamu via WhatsApp dalam 1x24 jam.\n\nTerima kasih! 🙏');
-      this.reset();
-    });
-  </script>
+  <!-- INFO -->
+  <aside class="br-info">
+    <h3>🔄 ALUR BY REQUEST</h3>
+    <div class="br-steps">
+      <div class="br-step"><span class="num">1</span> Isi form & kirim via WhatsApp</div>
+      <div class="br-step"><span class="num">2</span> Admin konfirmasi model & estimasi harga</div>
+      <div class="br-step"><span class="num">3</span> DP 50% untuk mulai produksi</div>
+      <div class="br-step"><span class="num">4</span> Proses jahit 7-14 hari</div>
+      <div class="br-step"><span class="num">5</span> Pelunasan & pengiriman 📦</div>
+    </div>
+    <div class="br-note">💡 <strong>Estimasi harga:</strong> mulai Rp 150.000 tergantung bahan & kerumitan model. Harga final dikonfirmasi admin sebelum produksi.</div>
+  </aside>
+</div>
+
+<script>
+const WA_NUMBER = '6287721552251'; // ← GANTI dengan nomor WA toko
+
+const ByRequest = {
+  submit() {
+    const nama = val('br-nama'), hp = val('br-hp');
+    if (!nama || !hp) { alert('Mohon isi nama & No. HP ya! 🙏'); return; }
+    let txt = '*BY REQUEST - PUENY COLLECTIONS*\n--------------------------\n';
+    txt += '*Nama:* ' + nama + '\n*HP:* ' + hp + '\n';
+    txt += '*Kategori:* ' + val('br-kategori') + '\n';
+    txt += '*Ukuran:* ' + val('br-ukuran') + '\n';
+    txt += '*Bahan:* ' + val('br-bahan') + '\n';
+    txt += '*Warna:* ' + (val('br-warna') || '-') + '\n';
+    if (val('br-ref')) txt += '*Referensi:* ' + val('br-ref') + '\n';
+    if (val('br-catatan')) txt += '*Catatan:* ' + val('br-catatan') + '\n';
+    txt += '--------------------------\nMohon info estimasi harga & ketersediaannya. Terima kasih 🙏';
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt), '_blank');
+  }
+};
+function val(id) { return document.getElementById(id).value.trim(); }
+</script>
 </body>
 </html>
