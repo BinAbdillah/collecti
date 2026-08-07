@@ -1,0 +1,55 @@
+{
+    "announcement": "🌟 GRATIS ONGKIR • OPEN PRE-ORDER KOLEKSI IED FITRI 2026 • TERIMA BY REQUEST 🌟",
+    "hero": {
+      "badge": "✨ Koleksi Baru Tersedia",
+      "title1": "Anggun, Modest &",
+      "titleAccent": "Stylish",
+      "title2": "dalam Fitrah",
+      "desc": "Pakaian muslimah untuk semua usia. Affordable, bisa custom by request, dan selalu membuatmu tampil percaya diri.",
+      "cta1": { "text": "🛍️ Belanja Sekarang", "href": "pages/catalog.html" },
+      "cta2": { "text": "📏 By Request", "href": "pages/by-request.html" },
+      "visual": "🧗‍♀️",
+      "visualCaption": "Pueny Collections 2026"
+    },
+    "sections": {
+      "categories": { "title": "Belanja Berdasarkan Kategori.", "subtitle": "Temukan gaya yang sesuai dengan kepribadianmu" },
+      "products": { "title": "New Arrivals.", "subtitle": "Koleksi terbaru, harga terjangkau untuk semua" },
+      "features": { "title": "Fitur Belanja.", "subtitle": "Pengalaman belanja yang personal dan menyenangkan" },
+      "testimonials": { "title": "Kata Mereka.", "subtitle": "Review jujur dari pelanggan Pueny Collections" }
+    },
+    "festive": {
+      "tag": "🌙 KOLEKSI EKSKLUSIF",
+      "title": "Koleksi Idul Fitri 2026",
+      "desc": "Tampil memukau di Hari Kemenangan. Pre-order sekarang, kirim H-7 sebelum Lebaran.",
+      "cta": "Lihat Koleksi 🌙",
+      "href": "pages/catalog.html?collection=iedl-fitri"
+    },
+    "byRequest": {
+      "title": "📏 Bisa By Request Lho!",
+      "desc": "Custom bahan, warna, ukuran, dan model sesuai keinginanmu. Harga tetap affordable.",
+      "steps": ["Pilih Model", "Pilih Bahan", "Input Ukuran", "Konfirmasi", "Dikirim 7-14 Hari"],
+      "cta": "Mulai Custom 📏",
+      "href": "pages/by-request.html"
+    },
+    "features": [
+      { "icon": "🎨", "title": "Mix & Match Builder", "desc": "Kombinasikan atasan, bawahan, dan khimar. Lihat hasilnya sebelum beli!", "cta": "Coba Sekarang", "href": "pages/mix-match.html" },
+      { "icon": "📏", "title": "Size Finder", "desc": "Input tinggi & berat badan, kami rekomendasikan ukuran yang paling pas.", "cta": "Cari Ukuranmu", "href": "pages/size-finder.html" },
+      { "icon": "💃", "title": "Style My Look", "desc": "Jawab beberapa pertanyaan, dapatkan rekomendasi outfit sesuai gaya & occasion.", "cta": "Mulai Quiz", "href": "pages/style-my-look.html" }
+    ],
+    "newsletter": {
+      "title": "💌 Dapatkan Diskon 15%",
+      "desc": "Subscribe untuk promo eksklusif, info koleksi baru & tips OOTD",
+      "button": "Subscribe"
+    },
+    "footer": {
+      "socialTitle": "Hubungi Kami",
+      "socials": [
+        { "icon": "📱", "label": "WhatsApp", "href": "#" },
+        { "icon": "📷", "label": "Instagram", "href": "#" },
+        { "icon": "🎵", "label": "TikTok", "href": "#" },
+        { "icon": "🛒", "label": "Shopee", "href": "#" }
+      ],
+      "copyright": "© 2026 Pueny Collections. All rights reserved.",
+      "tagline": "\"Anggun, Modest dan Stylish dalam Fitrah\""
+    }
+  }
