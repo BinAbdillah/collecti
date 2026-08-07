@@ -1,0 +1,9 @@
+{
+    "orders": [
+      { "id": "#0156", "customer": "Aisyah R.", "items": "Gamis Aisyah x1", "total": 159000, "status": "shipped" },
+      { "id": "#0155", "customer": "Fatimah Z.", "items": "Kebaya Zahra x2", "total": 378000, "status": "processing" },
+      { "id": "#0154", "customer": "Khadijah M.", "items": "Custom Gamis x1", "total": 210000, "status": "pending" },
+      { "id": "#0153", "customer": "Zahra A.", "items": "Khimar Instan x3", "total": 165000, "status": "done" },
+      { "id": "#0152", "customer": "Maryam S.", "items": "Kulot Plisket x2", "total": 178000, "status": "done" }
+    ]
+  }

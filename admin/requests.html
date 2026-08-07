@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>By Request - Pueny Admin</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/admin.css">
+<style>
+  .status.progress{background:rgba(255,152,0,.1);color:#FF9800;}
+  .req-card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:18px;margin-bottom:14px;}
+  .req-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#eee;}
+  .req-card p{font-size:12px;color:#999;margin-bottom:6px;}
+  .req-note{color:#bbb !important;}
+</style>
+</head>
+<body class="admin-body">
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="admin-logo">Pueny<span>Admin</span></div>
+    <nav>
+      <a href="index.html">📊 Dashboard</a>
+      <a href="products.html">👗 Produk</a>
+      <a href="orders.html">📦 Pesanan</a>
+      <a href="requests.html" class="active">📝 By Request</a>
+    </nav>
+    <div class="admin-user">👤 Admin Pueny</div>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-header"><h2>By Request</h2><span>otomatis dari requests.json</span></div>
+    <div id="requestsList"></div>
+  </main>
+</div>
+<script src="../js/admin.js"></script>
+</body>
+</html>

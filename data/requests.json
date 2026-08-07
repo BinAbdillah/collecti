@@ -1,0 +1,7 @@
+{
+    "requests": [
+      { "id": "R-012", "name": "Khadijah M.", "wa": "0812-3456-7890", "category": "Gamis", "size": "Custom", "material": "Katun Jepang", "color": "Sage green", "note": "Lengan lebih panjang, tambah saku kanan", "status": "pending", "date": "2026-08-05" },
+      { "id": "R-011", "name": "Hana P.", "wa": "0813-2222-1111", "category": "Kebaya Muslimah", "size": "L", "material": "Satin", "color": "Champagne", "note": "Untuk kondangan akhir Agustus", "status": "progress", "date": "2026-08-03" },
+      { "id": "R-010", "name": "Aisyah R.", "wa": "0857-9999-0000", "category": "Khimar", "size": "All Size", "material": "Ceruty", "color": "Lilac", "note": "-", "status": "done", "date": "2026-07-28" }
+    ]
+  }
